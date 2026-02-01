@@ -109,6 +109,7 @@
 		text-align: center; 
 		display: flex;
 		flex-wrap: wrap;
+  
 	}
 	.section-about{
 		padding: 40px; 
@@ -203,7 +204,16 @@
     }
 
     /* Formulário de contato */
-    form { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: auto; }
+    form { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 15px; 
+      max-width: 400px; 
+      margin: auto; 
+      padding: 32px;
+      border-radius: 30px;
+      border: solid 4px black;
+    }
     input, textarea, button { padding: 10px; border: none; border-radius: 5px; }
     button {
       background: #00ffcc; color: #0f0f1a;
