@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+    /* ===========================
+       Estilos gerais do site
+       =========================== */
+    :root{
+	--bg:#071022; /* deep navy */
+	--bg-gradient: linear-gradient(180deg,#071022 0%, #04121a 100%);
+	--card: rgba(255,255,255,0.03);
+	--accent: #0b3b66; /* dark blue */
+	--accent2: #0f6b4a; /* dark green */
+	--text: #e6eef6;
+	--muted: #9aa6b2;
+	--border: rgba(255,255,255,0.06);
+	--radius:12px;
+	--max-width:1100px;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f1a; /* fundo escuro padrão */
+      color: #fff;
+      transition: background 0.5s, color 0.5s; /* transição suave pro modo claro/escuro */
+    }
+
+    /* Header fixo no topo */
+    .header {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+	p{
+		font-family: "Roboto Condensed", sans-serif;
+  		font-optical-sizing: auto;
+  		font-weight: 600;
+  		font-style: normal;
+	}
+	.text-BioSynTech{
+		font-family: "Bitcount Single", system-ui;
+  		font-optical-sizing: auto;
+  		font-weight: 400;
+  		font-style: normal;
+  		font-variation-settings:
+    		"slnt" 0,
+    		"CRSV" 0.5,
+    		"ELSH" 0,
+    		"ELXP" 0;
+	}
+    .logo { 
+        width: 100px; 
+        border-radius: 50%;
+    }
+
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav a { color: #00ffcc; text-decoration: none; transition: color 0.3s; }
+    nav a:hover { color: #fff; }
+
+    /* Botão de alternar tema */
+    .theme-toggle {
+      background: #00ffcc;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #0f0f1a;
+      font-weight: bold;
+    }
+
+    /* Hero (capa inicial) */
+    .hero {
+      height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      padding-top: 120px; /* espaço extra por causa do header fixo */
+    }
+
+    .hero .text-BioSynTech {
+      font-size: 4rem;
+      color: #00ffcc;
+      animation: glow 2s infinite alternate;
+    }
+
+    .btn {
+      margin-top: 20px; padding: 10px 20px;
+      background: #00ffcc; color: #0f0f1a;
+      border-radius: 5px; text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .btn:hover { transform: scale(1.1); }
+
+    /* Seções */
+    .section { 
+		padding: 40px; 
+		text-align: center; 
+	}
+	.section-contact { 
+		padding: 40px; 
+		text-align: center; 
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.section-about{
+		padding: 40px; 
+		text-align: center; 
+	}
+	.sub-section-about{display: flex;}
+	.servicos-container {
+  		display: flex;
+  		align-items: center; /* Alinha verticalmente ao centro */
+  		justify-content: space-around; /* Dá um espaçamento igual entre os blocos */
+  		padding: 20px;
+  		gap: 30px; /* Espaço entre os cards e a imagem */
+	}
+
+	.cards-wrapper {
+  		display: grid;
+  		grid-template-columns: 1fr 1fr; /* Cria duas colunas de cards */
+  		gap: 15px; /* Espaço entre cada card */
+	}
+
+	.card {
+  		background-color: #1a1a2e; /* Cor escura do seu print */
+  		color: white;
+  		padding: 20px;
+  		border-radius: 8px;
+  		text-align: center;
+  		min-width: 150px;
+	}
+
+	.image-wrapper img {
+		max-width: 100%; /* Garante que a imagem não transborde */
+  		height: auto;
+  		border-radius: 15px;
+	}
+    .section img { 
+		max-width: 100%; 
+		border-radius: 10px; 
+		margin-top: 20px; 
+	}
+
+    .team-grid{
+        display:flex;
+        gap:1rem;
+        margin-top:1rem;
+		flex-wrap:wrap;
+    }   
+    .member{
+        background:transparent;
+        padding:1rem;
+        border-radius:10px;
+        text-align:center;
+        flex:1;
+        border:1px solid rgba(255,255,255,0.03)
+    }
+	li{
+		list-style-type: none;
+	}
+    .avatar{
+        width:64px;
+        height:64px;
+        border-radius:50%;
+        background:linear-gradient(135deg,var(--accent2),var(--accent));
+        color:#fff;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:700;
+        margin-bottom:0.5rem
+    }
+    .container_members{
+        max-width:var(--max-width);
+        margin:0 auto;
+        padding:2rem;
+		
+    }
+	.img-representation{
+		width: 400px;
+		border-radius: 20px;
+
+	}
+    /* Cards de serviços */
+    .cards { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .card {
+      background: #1a1a2e; padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 200px;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,255,204,0.5);
+    }
+
+    /* Formulário de contato */
+    form { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: auto; }
+    input, textarea, button { padding: 10px; border: none; border-radius: 5px; }
+    button {
+      background: #00ffcc; color: #0f0f1a;
+      cursor: pointer; transition: background 0.3s;
+    }
+    button:hover { background: #00ccaa; }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    footer img { height: 80px; }
+
+    /* Animações */
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes glow {
+      from {text-shadow: 0 0 10px #00ffcc;}
+      to {text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;}
+    }
+
+    /* Tema claro */
+    body.light {
+      background: #f5f5f5;
+      color: #222;
+    }
+    body.light .header { background: rgba(191, 191, 191, 0.9); }
+	body.light .hero { background: linear-gradient(135deg, #bdbbbb, #ffffff);}
+    body.light nav a { color: #0066cc; }
+	body.light .text-BioSynTech { color: rgba(9, 241, 9, 0.782)}
+    body.light .btn { background: #0066cc; color: #fff; }
+    body.light .card { background: #bdbbbb; }
+    body.light footer { background: #bdbbbb; }
+  
