@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioSynTech</title>
+  <!-- Ícone da aba -->
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="img/BioSynTech.jpg">
+  <style>
+    /* ===========================
+       Estilos gerais do site
+       =========================== */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f1a; /* fundo escuro padrão */
+      color: #fff;
+      transition: background 0.5s, color 0.5s; /* transição suave pro modo claro/escuro */
+    }
+
+    /* Header fixo no topo */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: rgba(0,0,0,0.8);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo { height: 100px; }
+
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav a { color: #00ffcc; text-decoration: none; transition: color 0.3s; }
+    nav a:hover { color: #fff; }
+
+    /* Botão de alternar tema */
+    .theme-toggle {
+      background: #00ffcc;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #0f0f1a;
+      font-weight: bold;
+    }
+
+    /* Hero (capa inicial) */
+    .hero {
+      height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      padding-top: 120px; /* espaço extra por causa do header fixo */
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      color: #00ffcc;
+      animation: glow 2s infinite alternate;
+    }
+
+    .btn {
+      margin-top: 20px; padding: 10px 20px;
+      background: #00ffcc; color: #0f0f1a;
+      border-radius: 5px; text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .btn:hover { transform: scale(1.1); }
+
+    /* Seções */
+    .section { padding: 100px 40px; text-align: center; }
+    .section img { max-width: 100%; border-radius: 10px; margin-top: 20px; }
+
+    /* Cards de serviços */
+    .cards { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .card {
+      background: #1a1a2e; padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 200px;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,255,204,0.5);
+    }
+
+    /* Formulário de contato */
+    form { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: auto; }
+    input, textarea, button { padding: 10px; border: none; border-radius: 5px; }
+    button {
+      background: #00ffcc; color: #0f0f1a;
+      cursor: pointer; transition: background 0.3s;
+    }
+    button:hover { background: #00ccaa; }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    footer img { height: 80px; }
+
+    /* Animações */
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes glow {
+      from {text-shadow: 0 0 10px #00ffcc;}
+      to {text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc;}
+    }
+
+    /* Tema claro */
+    body.light {
+      background: #f5f5f5;
+      color: #222;
+    }
+    body.light .header { background: rgba(255,255,255,0.9); }
+    body.light nav a { color: #0066cc; }
+    body.light .btn { background: #0066cc; color: #fff; }
+    body.light .card { background: #e0e0e0; }
+    body.light footer { background: #ddd; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img src="BioSynTech.jpeg" alt="BioSynTech Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#pesquisa">Pesquisas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙/☀️</button>
+  </header>
+
+  <section class="hero">
+    <h1>BioSynTech</h1>
+    <p>Inovação em Biotecnologia, Ciência e Tecnologia</p>
+    <a href="#sobre" class="btn">Conheça mais</a>
+  </section>
+
+  <section id="sobre" class="section">
+    <h2>Sobre Nós</h2>
+    <p>A BioSynTech é uma startup que realiza análises técnicas e laboratoriais em física, química e biologia. Desenvolvemos sistemas, algoritmos, tecnologias e próteses, além de pesquisas avançadas em órgãos artificiais e genética.</p>
+    <img src="laboratorio.jpg" alt="Laboratório moderno com tubos de ensaio">
+  </section>
+
+  <section id="servicos" class="section">
+    <h2>Serviços</h2>
+    <div class="cards">
+      <div class="card">Consultorias científicas</div>
+      <div class="card">Análises laboratoriais</div>
+      <div class="card">Desenvolvimento de tecnologias</div>
+      <div class="card">Serviços terceirizados</div>
+    </div>
+    <img src="quimica.png" alt="Modelo de molécula 3D brilhante">
+  </section>
+
+  <section id="pesquisa" class="section">
+    <h2>Áreas de Pesquisa</h2>
+    <ul>
+      <li>Órgãos artificiais</li>
+      <li>Análises genéticas</li>
+      <li>Física, Química e Biologia</li>
+      <li>Ciência da Computação</li>
+      <li>Integração de ciência e tecnologia</li>
+    </ul>
+    <img src="genetica.png" alt="Hélice de DNA digital azul brilhante">
+  </section>
+
+  <section id="contato" class="section">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu email" required>
+      <textarea placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <img src="tecnologia.png" alt="Placa-mãe futurista com circuitos iluminados">
+  </section>
+
+  <section id="microbiologia" class="section">
+    <h2>Microbiologia</h2>
+    <p>Estudamos estruturas microscópicas como vírus, bactérias e células, com foco em aplicações médicas e genéticas.</p>
+    <img src="biologia.png" alt="Microscopia de células e microorganismos">
+  </section>
+
+  <footer>
+    <img src="BioSynTech.jpeg" alt="BioSynTech Logo">
+    <p>&copy; 2026 BioSynTech - Todos os direitos reservados</
+
+  </footer>
+  <script>
+    // ===========================
+    // Navegação suave entre seções
+    // ===========================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // ===========================
+    // Efeito de entrada nas seções
+    // ===========================
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      section.style.opacity = 0;
+      section.style.transform = 'translateY(50px)';
+      section.style.transition = 'all 1s ease';
+      observer.observe(section);
+    });
+
+    // ===========================
+    // Alternar tema claro/escuro
+    // ===========================
+    function toggleTheme() {
+      // se o body tiver a classe "light", remove -> volta pro escuro
+      // se não tiver, adiciona -> fica claro
+      document.body.classList.toggle('light');
+    }
+  </script>
+</body>
+</html>
