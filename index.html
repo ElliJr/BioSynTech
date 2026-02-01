@@ -5,12 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BioSynTech</title>
   <!-- Ícone da aba -->
-    <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/png" href="img/BioSynTech.jpg">
+  <link rel="icon" type="image/png" href="BioSynTech.jpeg">
   <style>
     /* ===========================
        Estilos gerais do site
        =========================== */
+    :root{
+	--bg:#071022; /* deep navy */
+	--bg-gradient: linear-gradient(180deg,#071022 0%, #04121a 100%);
+	--card: rgba(255,255,255,0.03);
+	--accent: #0b3b66; /* dark blue */
+	--accent2: #0f6b4a; /* dark green */
+	--text: #e6eef6;
+	--muted: #9aa6b2;
+	--border: rgba(255,255,255,0.06);
+	--radius:12px;
+	--max-width:1100px;
+}
+
+
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -77,6 +91,37 @@
     /* Seções */
     .section { padding: 100px 40px; text-align: center; }
     .section img { max-width: 100%; border-radius: 10px; margin-top: 20px; }
+
+    .team-grid{
+        display:flex;
+        gap:1rem;
+        margin-top:1rem
+    }   
+    .member{
+        background:transparent;
+        padding:1rem;
+        border-radius:10px;
+        text-align:center;
+        flex:1;
+        border:1px solid rgba(255,255,255,0.03)
+    }
+    .avatar{
+        width:64px;
+        height:64px;
+        border-radius:50%;
+        background:linear-gradient(135deg,var(--accent2),var(--accent));
+        color:#fff;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:700;
+        margin-bottom:0.5rem
+    }
+    .container_members{
+        max-width:var(--max-width);
+        margin:0 auto;
+        padding:2rem
+    }
 
     /* Cards de serviços */
     .cards { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
@@ -190,7 +235,44 @@
     </form>
     <img src="tecnologia.png" alt="Placa-mãe futurista com circuitos iluminados">
   </section>
-
+   <section id="team" class="team">
+            <div class="container_members">
+                <h2>Nossa equipe</h2>
+                <p>Time multidisciplinar com cientistas, engenheiros e especialistas em regulamentação.</p>
+                <div class="team-grid">
+                    <div class="member">
+                        <div class="avatar">JB</div>
+                        <h4>Jefheson</h4>
+                        <p>Diretor Científico</p>
+                    </div>
+                    <div class="member">
+                        <div class="avatar">EL</div>
+                        <h4>Elli Junior</h4>
+                        <p>Desenvolvedor</p>
+                    </div>
+                    <div class="member">
+                        <div class="avatar">AD</div>
+                        <h4>Andrei</h4>
+                        <p>Diretor de marketing</p>
+                    </div>
+                    <div class="member">
+                        <div class="avatar">NT</div>
+                        <h4>Natan</h4>
+                        <p>Diretor Financeiro</p>
+                    </div>
+                    <div class="member">
+                        <div class="avatar">AT</div>
+                        <h4>Arthur</h4>
+                        <p>Pesquisador</p>
+                    </div>
+                    <div class="member">
+                        <div class="avatar">JC</div>
+                        <h4>Jackson</h4>
+                        <p>Midia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
   <section id="microbiologia" class="section">
     <h2>Microbiologia</h2>
     <p>Estudamos estruturas microscópicas como vírus, bactérias e células, com foco em aplicações médicas e genéticas.</p>
